@@ -10,14 +10,16 @@ import img1 from "../imgg/profilimg.webp";
             bio:"Worked in many companies",
             imgSrc:img1,
             profession:"Engineer",
-            show:false,
-            counter:0
+            counter:0,
+            show:false
+            
         };
     }
          
     show =() =>{
          this.setState({
              show:!this.state.show
+             
          })
     }
 
@@ -26,7 +28,7 @@ import img1 from "../imgg/profilimg.webp";
     }
     add=() =>{this.setState({counter:++ this.state.counter})}
     componentDidMount(){
-        setInterval(()=>this.setState({counter:this.state.counter+1}),1000)
+        setInterval(()=>this.setState({counter:this.state.counter+1}),5000)
     }
 
         
@@ -36,11 +38,11 @@ import img1 from "../imgg/profilimg.webp";
         return (
             <>
             <h1>Alex Murcer</h1>
-        {this.state.show && <p>I'm {this.state.fullname} .I'm {this.state.bio} and I'm {this.state.profession} <br/>< img src={this.state.imgSrc} alt="profil"/></p>
+        {this.state.show && <p>I'm {this.state.fullname} .I'm {this.state.bio} and I'm {this.state.profession} <br/>< img src={this.state.imgSrc} alt="profil"/> <br/>show counter {this.state.counter} </p>
         }
         
         <button onClick={this.show}>Show my profil</button>
-        <div> show my {this.state.counter}</div>
+        
         
         
         </>
